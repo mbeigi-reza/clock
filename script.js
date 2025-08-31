@@ -1,5 +1,9 @@
 const selectMenu = document.querySelectorAll('select')
 const timeBox = document.querySelector('.time')
+const setAlarmBtn = document.querySelector('button')
+const content = document.querySelector('content')
+let alarmTime;
+const ringtone = new Audio('https://next1code.ir/wp-content/uploads/2022/08/ringtone.mp3')
 
 for(let i = 23 ; i >= 0 ; i-- ){
     i = i < 10 ? '0' + i : i
@@ -24,4 +28,15 @@ setInterval(() => {
 
 
    timeBox.innerHTML = `${h} : ${m} : ${s}`
+   if(alarmTime == `${h}:${m}`){
+    ringtone.play();
+   }
 }, 1000);
+setAlarmBtn.addEventListener('click', () => {
+    alarmTime = `${selectMenu[0].value}:${selectMenu[1].value}`
+    if(alarmTime.includes('Hour') || alarmTime.includes('Minute')){
+        return alert('زمان هشدار را وارد کنید.')
+    }
+    content.classList.add('disable')
+    setAlarmBtn.innerText = 'clear alarm'
+})

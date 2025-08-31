@@ -65,3 +65,9 @@ body{
     font-size: 20px;
 
 }
+
+.container .content.disable{
+    opacity: 0.5;
+    pointer-events: none;
+
+}
