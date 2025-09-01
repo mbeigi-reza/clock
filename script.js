@@ -1,11 +1,10 @@
 const selectMenu = document.querySelectorAll('select');
 const timeBox = document.querySelector('.time');
 const setAlarmBtn = document.querySelector('button');
-const content = document.querySelector('.content'); // اصلاح شد
+const content = document.querySelector('.content');
 let alarmTime, alarmState = 'noset';
 const ringtone = new Audio('https://next1code.ir/wp-content/uploads/2022/08/ringtone.mp3');
 
-// پر کردن منوهای ساعت و دقیقه
 for (let i = 0; i <= 23; i++) {
     let hour = i < 10 ? '0' + i : i;
     let option = `<option value="${hour}">${hour}</option>`;
@@ -18,7 +17,6 @@ for (let i = 0; i <= 59; i++) {
     selectMenu[1].firstElementChild.insertAdjacentHTML('afterend', option);
 }
 
-// نمایش زمان فعلی
 setInterval(() => {
     const date = new Date();
     let h = date.getHours();
@@ -36,7 +34,7 @@ setInterval(() => {
     }
 }, 1000);
 
-// مدیریت کلیک روی دکمه
+
 setAlarmBtn.addEventListener('click', () => {
     if (alarmState === 'noset') {
         alarmTime = `${selectMenu[0].value}:${selectMenu[1].value}`;
@@ -49,7 +47,7 @@ setAlarmBtn.addEventListener('click', () => {
     }
 });
 
-// تابع مدیریت وضعیت آلارم
+//  مدیریت وضعیت آلارم
 function checkState(state) {
     if (state === 'noset') {
         content.classList.add('disable');

@@ -11,6 +11,21 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(to left , #4a98f7, black);
+    background-size: 400% 400%;
+    animation: changeBackground 4s infinite;    
+}
+@keyframes changeBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+    
 }
 .content{
     display: flex;
@@ -19,7 +34,6 @@ body{
 }
 body{
     height: 100vh;
-    background: #4a98f7;
 }
 .container{
     width: 450px;
