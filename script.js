@@ -47,7 +47,6 @@ setAlarmBtn.addEventListener('click', () => {
     }
 });
 
-//  مدیریت وضعیت آلارم
 function checkState(state) {
     if (state === 'noset') {
         content.classList.add('disable');
