@@ -1,0 +1,11 @@
+{
+  "name": "clock",
+  "version": "1.0.0",
+  "homepage": "https://YOUR_USERNAME.github.io/clock",
+  "scripts": {
+    "deploy": "gh-pages -d ."
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
